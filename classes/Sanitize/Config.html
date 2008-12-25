@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Sanitize::Config</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Sanitize::Config</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/sanitize/config/basic_rb.html">
+                lib/sanitize/config/basic.rb
+                </a>
+        <br />
+                <a href="../../files/lib/sanitize/config/relaxed_rb.html">
+                lib/sanitize/config/relaxed.rb
+                </a>
+        <br />
+                <a href="../../files/lib/sanitize/config/restricted_rb.html">
+                lib/sanitize/config/restricted.rb
+                </a>
+        <br />
+                <a href="../../files/lib/sanitize/config_rb.html">
+                lib/sanitize/config.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BASIC</td>
+          <td>=</td>
+          <td class="context-item-value">{       :elements =&gt; [         'a', 'b', 'blockquote', 'br', 'cite', 'code', 'dd', 'dl', 'dt', 'em',         'i', 'li', 'ol', 'p', 'pre', 'q', 'small', 'strike', 'strong', 'sub',         'sup', 'u', 'ul'],        :attributes =&gt; {         'a'          =&gt; ['href'],         'blockquote' =&gt; ['cite'],         'q'          =&gt; ['cite']</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RELAXED</td>
+          <td>=</td>
+          <td class="context-item-value">{       :elements =&gt; [         'a', 'b', 'blockquote', 'br', 'caption', 'cite', 'code', 'col',         'colgroup', 'dd', 'dl', 'dt', 'em', 'i', 'img', 'li', 'ol', 'p', 'pre',         'q', 'small', 'strike', 'strong', 'sub', 'sup', 'table', 'tbody', 'td',         'tfoot', 'th', 'thead', 'tr', 'u', 'ul'],        :attributes =&gt; {         'a'          =&gt; ['href', 'title'],         'blockquote' =&gt; ['cite'],         'col'        =&gt; ['span', 'width'],         'colgroup'   =&gt; ['span', 'width'],         'img'        =&gt; ['align', 'alt', 'height', 'src', 'title', 'width'],         'ol'         =&gt; ['start', 'type'],         'q'          =&gt; ['cite'],         'table'      =&gt; ['summary', 'width'],         'td'         =&gt; ['abbr', 'axis', 'colspan', 'rowspan', 'width'],         'th'         =&gt; ['abbr', 'axis', 'colspan', 'rowspan', 'scope',                          'width'],         'ul'         =&gt; ['type']</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RESTRICTED</td>
+          <td>=</td>
+          <td class="context-item-value">{       :elements =&gt; ['b', 'em', 'i', 'strong', 'u']</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DEFAULT</td>
+          <td>=</td>
+          <td class="context-item-value">{       # Whether or not to allow HTML comments. Allowing comments is strongly       # discouraged, since IE allows script execution within conditional       # comments.       :allow_comments =&gt; false,        # HTML elements to allow. By default, no elements are allowed (which means       # that all HTML will be stripped).       :elements =&gt; [],        # HTML attributes to allow in specific elements. By default, no attributes       # are allowed.       :attributes =&gt; {},        # HTML attributes to add to specific elements. By default, no attributes       # are added.       :add_attributes =&gt; {},        # URL handling protocols to allow in specific attributes. By default, no       # protocols are allowed.       :protocols =&gt; {}</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
