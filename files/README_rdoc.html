@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>File: README</title>
+  <title>File: README.rdoc</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
@@ -47,16 +47,16 @@
 
 
   <div id="fileHeader">
-    <h1>README</h1>
+    <h1>README.rdoc</h1>
     <table class="header-table">
     <tr class="top-aligned-row">
       <td><strong>Path:</strong></td>
-      <td>README
+      <td>README.rdoc
       </td>
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Wed Dec 24 22:13:11 -0800 2008</td>
+      <td>Thu Jan 01 13:14:32 -0800 2009</td>
     </tr>
     </table>
   </div>
@@ -84,10 +84,10 @@ within attributes that contain URLs. Any HTML elements or attributes that
 you don&#8216;t explicitly allow will be removed.
 </p>
 <p>
-Because it&#8216;s based on Hpricot, a full-fledged HTML parser, rather
-than a bunch of fragile regular expressions, <a
-href="../classes/Sanitize.html">Sanitize</a> has no trouble dealing with
-malformed or maliciously-formed HTML. When in doubt, <a
+Because it&#8216;s based on <a href="../classes/Hpricot.html">Hpricot</a>,
+a full-fledged HTML parser, rather than a bunch of fragile regular
+expressions, <a href="../classes/Sanitize.html">Sanitize</a> has no trouble
+dealing with malformed or maliciously-formed HTML. When in doubt, <a
 href="../classes/Sanitize.html">Sanitize</a> always errs on the side of
 caution.
 </p>
@@ -95,10 +95,10 @@ caution.
 <tr><td valign="top"><b>Author</b>:</td><td>Ryan Grove (<a href="mailto:ryan@wonko.com">ryan@wonko.com</a>)
 
 </td></tr>
-<tr><td valign="top"><b>Version</b>:</td><td>1.0.0 (2008-12-25)
+<tr><td valign="top"><b>Version</b>:</td><td>1.0.1 (2009-01-01)
 
 </td></tr>
-<tr><td valign="top"><b>Copyright</b>:</td><td>Copyright (c) 2008 Ryan Grove. All rights reserved.
+<tr><td valign="top"><b>Copyright</b>:</td><td>Copyright (c) 2009 Ryan Grove. All rights reserved.
 
 </td></tr>
 <tr><td valign="top"><b>License</b>:</td><td>MIT License (<a
@@ -114,7 +114,7 @@ href="http://opensource.org/licenses/mit-license.php">opensource.org/licenses/mi
 <li>RubyGems
 
 </li>
-<li>Hpricot 0.6+
+<li><a href="../classes/Hpricot.html">Hpricot</a> 0.6+
 
 </li>
 </ul>
@@ -224,9 +224,19 @@ no protocol at all), it will be removed.
     'img' =&gt; {'src'  =&gt; ['http', 'https']}
   }
 </pre>
+<p>
+If you&#8216;d like to allow the use of relative URLs which don&#8216;t
+have a protocol, include the special value <tt>:relative</tt> in the
+protocol array:
+</p>
+<pre>
+  :protocols =&gt; {
+    'a' =&gt; {'href' =&gt; ['http', 'https', :relative]}
+  }
+</pre>
 <h2>License</h2>
 <p>
-Copyright (c) 2008 Ryan Grove &lt;ryan@wonko.com&gt;
+Copyright (c) 2009 Ryan Grove &lt;ryan@wonko.com&gt;
 </p>
 <p>
 Permission is hereby granted, free of charge, to any person obtaining a

@@ -152,11 +152,11 @@ Returns a sanitized copy of <em>html</em>, using the settings in
             onclick="toggleCode('M000001-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000001-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/sanitize.rb, line 43</span>
-43:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">clean</span>(<span class="ruby-identifier">html</span>, <span class="ruby-identifier">config</span> = {})
-44:     <span class="ruby-identifier">sanitize</span> = <span class="ruby-constant">Sanitize</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">config</span>)
-45:     <span class="ruby-identifier">sanitize</span>.<span class="ruby-identifier">clean</span>(<span class="ruby-identifier">html</span>)
-46:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File lib/sanitize.rb, line 47</span>
+47:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">clean</span>(<span class="ruby-identifier">html</span>, <span class="ruby-identifier">config</span> = {})
+48:     <span class="ruby-identifier">sanitize</span> = <span class="ruby-constant">Sanitize</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">config</span>)
+49:     <span class="ruby-identifier">sanitize</span>.<span class="ruby-identifier">clean</span>(<span class="ruby-identifier">html</span>)
+50:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -180,11 +180,11 @@ returning <em>html</em>, or <tt>nil</tt> if no changes were necessary.
             onclick="toggleCode('M000002-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000002-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/sanitize.rb, line 50</span>
-50:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">clean!</span>(<span class="ruby-identifier">html</span>, <span class="ruby-identifier">config</span> = {})
-51:     <span class="ruby-identifier">sanitize</span> = <span class="ruby-constant">Sanitize</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">config</span>)
-52:     <span class="ruby-identifier">sanitize</span>.<span class="ruby-identifier">clean!</span>(<span class="ruby-identifier">html</span>)
-53:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File lib/sanitize.rb, line 54</span>
+54:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">clean!</span>(<span class="ruby-identifier">html</span>, <span class="ruby-identifier">config</span> = {})
+55:     <span class="ruby-identifier">sanitize</span> = <span class="ruby-constant">Sanitize</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">config</span>)
+56:     <span class="ruby-identifier">sanitize</span>.<span class="ruby-identifier">clean!</span>(<span class="ruby-identifier">html</span>)
+57:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -209,10 +209,10 @@ href="Sanitize.html">Sanitize</a> object initialized with the settings in
             onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000003-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/sanitize.rb, line 60</span>
-60:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">config</span> = {})
-61:     <span class="ruby-ivar">@config</span> = <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">config</span>)
-62:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File lib/sanitize.rb, line 64</span>
+64:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">config</span> = {})
+65:     <span class="ruby-ivar">@config</span> = <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">config</span>)
+66:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -237,11 +237,11 @@ Returns a sanitized copy of <em>html</em>.
             onclick="toggleCode('M000004-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000004-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/sanitize.rb, line 65</span>
-65:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clean</span>(<span class="ruby-identifier">html</span>)
-66:     <span class="ruby-identifier">dupe</span> = <span class="ruby-identifier">html</span>.<span class="ruby-identifier">dup</span>
-67:     <span class="ruby-identifier">clean!</span>(<span class="ruby-identifier">dupe</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">dupe</span>
-68:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File lib/sanitize.rb, line 69</span>
+69:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clean</span>(<span class="ruby-identifier">html</span>)
+70:     <span class="ruby-identifier">dupe</span> = <span class="ruby-identifier">html</span>.<span class="ruby-identifier">dup</span>
+71:     <span class="ruby-identifier">clean!</span>(<span class="ruby-identifier">dupe</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">dupe</span>
+72:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -265,67 +265,75 @@ Performs <a href="Sanitize.html#M000001">clean</a> in place, returning
             onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000005-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/sanitize.rb, line 72</span>
- 72:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clean!</span>(<span class="ruby-identifier">html</span>)
- 73:     <span class="ruby-identifier">fragment</span> = <span class="ruby-constant">Hpricot</span>(<span class="ruby-identifier">html</span>)
- 74: 
- 75:     <span class="ruby-identifier">fragment</span>.<span class="ruby-identifier">traverse_element</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
- 76:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">bogusetag?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">doctype?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">procins?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">xmldecl?</span>
- 77:         <span class="ruby-identifier">node</span>.<span class="ruby-identifier">swap</span>(<span class="ruby-value str">''</span>)
- 78:         <span class="ruby-keyword kw">next</span>
- 79:       <span class="ruby-keyword kw">end</span>
- 80: 
- 81:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">comment?</span>
- 82:         <span class="ruby-identifier">node</span>.<span class="ruby-identifier">swap</span>(<span class="ruby-value str">''</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:allow_comments</span>]
- 83:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">elem?</span>
- 84:         <span class="ruby-identifier">name</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span>
- 85: 
- 86:         <span class="ruby-comment cmt"># Delete any element that isn't in the whitelist.</span>
- 87:         <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:elements</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">name</span>)
- 88:           <span class="ruby-identifier">node</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">replace_child</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
- 89:           <span class="ruby-keyword kw">next</span>
- 90:         <span class="ruby-keyword kw">end</span>
- 91: 
- 92:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:attributes</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)
- 93:           <span class="ruby-comment cmt"># Delete any attribute that isn't in the whitelist for this element.</span>
- 94:           <span class="ruby-identifier">node</span>.<span class="ruby-identifier">raw_attributes</span>.<span class="ruby-identifier">delete_if</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
- 95:             <span class="ruby-operator">!</span><span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:attributes</span>][<span class="ruby-identifier">name</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">key</span>.<span class="ruby-identifier">downcase</span>)
- 96:           <span class="ruby-keyword kw">end</span>
- 97: 
- 98:           <span class="ruby-comment cmt"># Delete remaining attributes that use unacceptable protocols.</span>
- 99:           <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:protocols</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)
-100:             <span class="ruby-identifier">protocol</span> = <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:protocols</span>][<span class="ruby-identifier">name</span>]
+     <span class="ruby-comment cmt"># File lib/sanitize.rb, line 76</span>
+ 76:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clean!</span>(<span class="ruby-identifier">html</span>)
+ 77:     <span class="ruby-identifier">fragment</span> = <span class="ruby-constant">Hpricot</span>(<span class="ruby-identifier">html</span>)
+ 78: 
+ 79:     <span class="ruby-identifier">fragment</span>.<span class="ruby-identifier">traverse_element</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+ 80:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">bogusetag?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">doctype?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">procins?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">xmldecl?</span>
+ 81:         <span class="ruby-identifier">node</span>.<span class="ruby-identifier">swap</span>(<span class="ruby-value str">''</span>)
+ 82:         <span class="ruby-keyword kw">next</span>
+ 83:       <span class="ruby-keyword kw">end</span>
+ 84: 
+ 85:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">comment?</span>
+ 86:         <span class="ruby-identifier">node</span>.<span class="ruby-identifier">swap</span>(<span class="ruby-value str">''</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:allow_comments</span>]
+ 87:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">elem?</span>
+ 88:         <span class="ruby-identifier">name</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span>
+ 89: 
+ 90:         <span class="ruby-comment cmt"># Delete any element that isn't in the whitelist.</span>
+ 91:         <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:elements</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">name</span>)
+ 92:           <span class="ruby-identifier">node</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">replace_child</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+ 93:           <span class="ruby-keyword kw">next</span>
+ 94:         <span class="ruby-keyword kw">end</span>
+ 95: 
+ 96:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:attributes</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)
+ 97:           <span class="ruby-comment cmt"># Delete any attribute that isn't in the whitelist for this element.</span>
+ 98:           <span class="ruby-identifier">node</span>.<span class="ruby-identifier">raw_attributes</span>.<span class="ruby-identifier">delete_if</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+ 99:             <span class="ruby-operator">!</span><span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:attributes</span>][<span class="ruby-identifier">name</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">key</span>.<span class="ruby-identifier">downcase</span>)
+100:           <span class="ruby-keyword kw">end</span>
 101: 
-102:             <span class="ruby-identifier">node</span>.<span class="ruby-identifier">raw_attributes</span>.<span class="ruby-identifier">delete_if</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
-103:               <span class="ruby-identifier">protocol</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">key</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-operator">!</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^([^:]+):/</span>) <span class="ruby-operator">||</span>
-104:                   <span class="ruby-operator">!</span><span class="ruby-identifier">protocol</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">$1</span>.<span class="ruby-identifier">downcase</span>))
-105:             <span class="ruby-keyword kw">end</span>
-106:           <span class="ruby-keyword kw">end</span>
-107:         <span class="ruby-keyword kw">else</span>
-108:           <span class="ruby-comment cmt"># Delete all attributes from elements with no whitelisted</span>
-109:           <span class="ruby-comment cmt"># attributes.</span>
-110:           <span class="ruby-identifier">node</span>.<span class="ruby-identifier">raw_attributes</span> = {}
-111:         <span class="ruby-keyword kw">end</span>
-112: 
-113:         <span class="ruby-comment cmt"># Add required attributes.</span>
-114:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:add_attributes</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)
-115:           <span class="ruby-identifier">node</span>.<span class="ruby-identifier">raw_attributes</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:add_attributes</span>][<span class="ruby-identifier">name</span>])
-116:         <span class="ruby-keyword kw">end</span>
-117:       <span class="ruby-keyword kw">end</span>
-118:     <span class="ruby-keyword kw">end</span>
-119: 
-120:     <span class="ruby-comment cmt"># Make one last pass through the fragment and replace angle brackets with</span>
-121:     <span class="ruby-comment cmt"># entities in all text nodes. This helps eliminate certain types of</span>
-122:     <span class="ruby-comment cmt"># maliciously-malformed nested tags.</span>
-123:     <span class="ruby-identifier">fragment</span>.<span class="ruby-identifier">traverse_element</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
-124:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">text?</span>
-125:         <span class="ruby-identifier">node</span>.<span class="ruby-identifier">swap</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">inner_text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'&lt;'</span>, <span class="ruby-value str">'&amp;lt;'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'&gt;'</span>, <span class="ruby-value str">'&amp;gt;'</span>))
+102:           <span class="ruby-comment cmt"># Delete remaining attributes that use unacceptable protocols.</span>
+103:           <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:protocols</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)
+104:             <span class="ruby-identifier">protocol</span> = <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:protocols</span>][<span class="ruby-identifier">name</span>]
+105: 
+106:             <span class="ruby-identifier">node</span>.<span class="ruby-identifier">raw_attributes</span>.<span class="ruby-identifier">delete_if</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+107:               <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">protocol</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">key</span>)
+108: 
+109:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^([^:]+)(?:\:|&amp;#0*58;|&amp;#x0*3a;)/</span>
+110:                 <span class="ruby-operator">!</span><span class="ruby-identifier">protocol</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">$1</span>.<span class="ruby-identifier">downcase</span>)
+111:               <span class="ruby-keyword kw">else</span>
+112:                 <span class="ruby-operator">!</span><span class="ruby-identifier">protocol</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">:relative</span>)
+113:               <span class="ruby-keyword kw">end</span>
+114:             <span class="ruby-keyword kw">end</span>
+115:           <span class="ruby-keyword kw">end</span>
+116:         <span class="ruby-keyword kw">else</span>
+117:           <span class="ruby-comment cmt"># Delete all attributes from elements with no whitelisted</span>
+118:           <span class="ruby-comment cmt"># attributes.</span>
+119:           <span class="ruby-identifier">node</span>.<span class="ruby-identifier">raw_attributes</span> = {}
+120:         <span class="ruby-keyword kw">end</span>
+121: 
+122:         <span class="ruby-comment cmt"># Add required attributes.</span>
+123:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:add_attributes</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)
+124:           <span class="ruby-identifier">node</span>.<span class="ruby-identifier">raw_attributes</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-ivar">@config</span>[<span class="ruby-identifier">:add_attributes</span>][<span class="ruby-identifier">name</span>])
+125:         <span class="ruby-keyword kw">end</span>
 126:       <span class="ruby-keyword kw">end</span>
 127:     <span class="ruby-keyword kw">end</span>
 128: 
-129:     <span class="ruby-identifier">result</span> = <span class="ruby-identifier">fragment</span>.<span class="ruby-identifier">to_s</span>
-130:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">html</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">html</span>[<span class="ruby-value">0</span>, <span class="ruby-identifier">html</span>.<span class="ruby-identifier">length</span>] = <span class="ruby-identifier">result</span>
-131:   <span class="ruby-keyword kw">end</span>
+129:     <span class="ruby-comment cmt"># Make one last pass through the fragment and encode all special HTML chars</span>
+130:     <span class="ruby-comment cmt"># and non-ASCII chars as entities. This eliminates certain types of</span>
+131:     <span class="ruby-comment cmt"># maliciously-malformed nested tags and also compensates for Hpricot's</span>
+132:     <span class="ruby-comment cmt"># burning desire to decode all entities.</span>
+133:     <span class="ruby-identifier">coder</span> = <span class="ruby-constant">HTMLEntities</span>.<span class="ruby-identifier">new</span>
+134: 
+135:     <span class="ruby-identifier">fragment</span>.<span class="ruby-identifier">traverse_element</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+136:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">text?</span>
+137:         <span class="ruby-identifier">node</span>.<span class="ruby-identifier">swap</span>(<span class="ruby-identifier">coder</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">inner_text</span>, <span class="ruby-identifier">:named</span>))
+138:       <span class="ruby-keyword kw">end</span>
+139:     <span class="ruby-keyword kw">end</span>
+140: 
+141:     <span class="ruby-identifier">result</span> = <span class="ruby-identifier">fragment</span>.<span class="ruby-identifier">to_s</span>
+142:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">html</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">html</span>[<span class="ruby-value">0</span>, <span class="ruby-identifier">html</span>.<span class="ruby-identifier">length</span>] = <span class="ruby-identifier">result</span>
+143:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
