@@ -130,9 +130,11 @@ class Sanitize
           node.raw_attributes.merge!(@config[:add_attributes][name])
         end
 
-        # Escape special chars in attribute values.
-        node.raw_attributes.each do |key, value|
-          node.raw_attributes[key] = Sanitize.encode_html(value)
+        unless @config[:skip_encoding]
+          # Escape special chars in attribute values.
+          node.raw_attributes.each do |key, value|
+            node.raw_attributes[key] = Sanitize.encode_html(value)
+          end
         end
       end
     end
@@ -140,8 +142,10 @@ class Sanitize
     # Make one last pass through the fragment and encode all special HTML chars
     # as entities. This eliminates certain types of maliciously-malformed nested
     # tags.
-    fragment.search('*') do |node|
-      node.swap(Sanitize.encode_html(node.to_original_html)) if node.text?
+    unless @config[:skip_encoding]
+      fragment.search('*') do |node|
+        node.swap(Sanitize.encode_html(node.to_original_html)) if node.text?
+      end
     end
 
     result = fragment.to_s

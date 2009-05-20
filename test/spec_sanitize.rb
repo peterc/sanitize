@@ -253,6 +253,16 @@ describe 'Custom configs' do
     input = '<a href="/wiki/Special:Random">Random Page</a>'
     Sanitize.clean(input, { :elements => ['a'], :attributes => {'a' => ['href']}, :protocols => { 'a' => { 'href' => [:relative] }} }).should.equal(input)
   end
+  
+  should 'skip encoding special characters if skip_encoding feature is activated' do
+    input = "x < y and \"this\" isn't a > test"
+    Sanitize.clean(input, { :skip_encoding => true }).should == "x < y and \"this\" isn't a > test"
+  end
+
+  should 'encode special characters if skip_encoding feature is explicitly not activated' do
+    input = "x < y and \"this\" isn't a > test"
+    Sanitize.clean(input, { :skip_encoding => false }).should == "x &lt; y and &quot;this&quot; isn&#39;t a &gt; test"
+  end
 end
 
 describe 'Sanitize.clean' do
